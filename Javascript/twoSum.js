@@ -1,11 +1,19 @@
+/**
+ * Soo I changed this script to my own original,
+ * the first was created using OpenAI's ChatGPT.
+ * I faked understanding then😂, so now heres one I created myself. 
+ * This is
+ three days after starting my first leetcode soo don't judge me😏
+ **/
 function twoSum(nums, target) {
-  let numMap = new Map();
   for (let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i];
-    if (numMap.has(complement)) {
-      return [numMap.get(complement), i];
+    const num = nums[i];
+    const complement = target - num;
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[j] === complement) {
+        return [i, j];
+      }
     }
-    numMap.set(nums[i], i);
   }
   return [];
 }
